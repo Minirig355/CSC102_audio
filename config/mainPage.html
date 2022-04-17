@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/styling.css">
+        <script src="js/code.js"></script>
+        <title>UAT Space Program</title>
+    </head>
+    <body>
+
+        <div id="clock">Time</div>
+        <img src="content/Logo.jpg" alt="UAT Space Program Logo" width="256" height="256">
+        <audio id="background" controls style="float:right">        <!--The background audio, due to updates to browsers to prevent autoplay before the user interacts with the page, I can't have it autoplay-->
+            <source src="content/bg_quiet.m4a" type="audio/mp4">    <!--I recorded this audio myself by playing with my 3D printer to make the beeping sounds, then filtering out the fan by adjusting the levels-->
+        </audio>
+        
+        <h1>UAT Space Program</h1>
+
+        <h2>mission 3</h2>
+
+        <p>Flight recorder telemetry is displayed in blue.</p>
+        <br>
+        <br>
+        <div class="telemetry" id="blastOffText">Blastoff Countdown</div>
+        <img id="blastOffPic" src="content/blastOffPic.gif" style="height:128px;display:none;"/>
+        <button onclick="blastOffTimer();" class="button">
+            Start
+        </button>
+        <br>
+        <br>
+        <br>
+        <label class="telemetry" for="apoapsis">Rocket apoapsis:</label>
+        <input type="text" id="apoapsis" name="apoapsis" value="0m" readonly>
+        <p><button id="startBurn" onclick="startBurn();" onmouseover="style.background='lightsalmon'" onmouseout="style.background='#ccc'" class="button">Start Burn</button>  <button id="stopBurn" onclick="stopBurn();" onmouseover="style.background='lightblue'" onmouseout="style.background='#ccc'" class="button">Stop Burn</button></p>
+        <br>
+        <br>
+        <h2>Craps simulator!</h2>
+        <div id="crapsRes">Craps Results</div>
+        <div id="die1Res">First die results</div>
+        <div id="die2Res">Second die results</div>
+        <div id="sumRes">Sum of die</div>
+        <button id="gambleButton" onclick="playCraps();" class="button">Play</button>
+        
+        <br>
+        <br>
+        Number of wins: <div id="wins">0</div>
+        Number of losses: <div id="losses">0</div>
+        Number of ties: <div id="ties">0</div>
+        <br>
+        <br>
+
+        <audio id="countdown" controls style="display:none">
+            <source src="content/countdown.m4a" type="audio/mp4">
+        </audio>
+        <audio id="burnSeqInit" controls style="display:none">
+            <source src="content/burnSeqInit.m4a" type="audio/mp4">
+        </audio>
+        <audio id="maxQ" controls style="display:none">
+            <source src="content/maxQ.m4a" type="audio/mp4">
+        </audio>
+        <audio id="apoKarman" controls style="display:none">
+            <source src="content/apoKarman.m4a" type="audio/mp4">
+        </audio>
+        <audio id="stageSeperation" controls style="display:none">
+            <source src="content/stageSeperation.m4a" type="audio/mp4">
+        </audio>
+        <audio id="apoGSO" controls style="display:none">
+            <source src="content/apoGSO.m4a" type="audio/mp4">
+        </audio>
+    </body>
+</html>
